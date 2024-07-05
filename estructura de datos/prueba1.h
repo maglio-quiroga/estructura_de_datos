@@ -15,7 +15,7 @@ typedef struct hormigas
 
 
 typedef struct nodo_reinas{
-    char nombre;
+    char nombre[20];
     int id, feromonas;
     hormigas* lista_hormigas;
     struct nodo_reinas* siguiente;
@@ -180,7 +180,8 @@ void determinar_fero(reinas* pila)
             }
             iterador_hormigas = iterador_hormigas->siguiente;
         }
-        
+        int num_fero = calcular_fibonacci(num_hormigas);
+        iterador_reinas->feromonas = num_fero;
         iterador_reinas = iterador_reinas->siguiente;
     }
 }
